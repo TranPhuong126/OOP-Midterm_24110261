@@ -50,7 +50,7 @@ class PointTest:
         print("Khoảng cách từ điểm B đến gốc tọa độ:")
         print(B.distance_to_origin())
 
-        print("Khoảng cách từ điểm A đến điểm B: ")
+        print("Khoảng cách từ điểm A đến điểm B:")
         print(A.distance_to(B))
 
 if __name__ == "__main__":
