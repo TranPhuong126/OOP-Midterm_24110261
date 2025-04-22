@@ -1,0 +1,83 @@
+import math
+from Bai12 import Point
+
+class LineSegment:
+    def __init__(self, *args):
+        if len(args) == 0:
+            self.__d1 = Point(8, 5)
+            self.__d2 = Point(1, 0)
+        elif len(args) == 2 and isinstance(args[0], Point) and isinstance(args[1], Point):
+            self.__d1 = args[0]
+            self.__d2 = args[1]
+        elif len(args) == 4:
+            self.__d1 = Point(args[0], args[1])
+            self.__d2 = Point(args[2], args[3])
+        elif len(args) == 1 and isinstance(args[0], LineSegment):
+            s = args[0]
+            self.__d1 = Point(s.get_d1().get_x(), s.get_d1().get_y())
+            self.__d2 = Point(s.get_d2().get_x(), s.get_d2().get_y())
+
+    def read(self):
+        data = input("Nhập đoạn thẳng (x1 y1 x2 y2): ").split()
+        x1, y1, x2, y2 = map(int, data)
+        self.__d1 = Point(x1, y1)
+        self.__d2 = Point(x2, y2)
+
+    def print(self):
+        print(f"[({self.__d1.get_x()}, {self.__d1.get_y()}); ({self.__d2.get_x()}, {self.__d2.get_y()})]")
+
+    def move(self, dx, dy):
+        self.__d1.move(dx, dy)
+        self.__d2.move(dx, dy)
+
+    def length(self):
+        return self.__d1.distance_to(self.__d2)
+
+    def angle(self):
+        dx = self.__d2.get_x() - self.__d1.get_x()
+        dy = self.__d2.get_y() - self.__d1.get_y()
+        goc = math.degrees(math.atan2(dy, dx))
+        if goc < 0:
+            goc += 360
+        return round(goc)
+
+    def get_d1(self):
+        return self.__d1
+
+    def get_d2(self):
+        return self.__d2
+
+class LineSegmentTest:
+    def testCase1():
+        A = Point(2, 5)
+        B = Point(20, 35)
+        AB = LineSegment(A, B)
+        AB.move(35, 51)
+        print("Đoạn thẳng AB sau khi tịnh tiến: ")
+        AB.print()
+
+    def testCase2():
+        CD = LineSegment()
+        CD.read()
+        print(f"|CD| = {CD.length():.2f}")
+
+    def testCase3():
+        n = int(input("Nhập số lượng đoạn thẳng: "))
+        print("Nhập tọa độ của 2 đầu mút của từng đoạn thẳng theo định dạng: x1 y1 x2 y2: ")
+        danh_sach = []
+        for _ in range(n):
+            data = list(map(int, input().split()))
+            d = LineSegment(*data)
+            danh_sach.append(d)
+        danh_sach.sort(key=lambda x: x.length())
+        print("Danh sách đoạn thẳng theo chiều dài tăng dần: ")
+        for doan in danh_sach:
+            doan.print()
+
+    def main():
+        LineSegmentTest.testCase1()
+        LineSegmentTest.testCase2()
+        LineSegmentTest.testCase3()
+
+if __name__ == "__main__":
+    LineSegmentTest.main()
