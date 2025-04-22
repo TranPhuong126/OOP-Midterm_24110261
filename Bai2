@@ -53,7 +53,7 @@ class LineSegmentTest:
         B = Point(20, 35)
         AB = LineSegment(A, B)
         AB.move(35, 51)
-        print("Đoạn thẳng AB sau khi tịnh tiến: ")
+        print("Đoạn thẳng AB sau khi tịnh tiến:")
         AB.print()
 
     def testCase2():
@@ -62,15 +62,15 @@ class LineSegmentTest:
         print(f"|CD| = {CD.length():.2f}")
 
     def testCase3():
-        n = int(input("Nhập số lượng đoạn thẳng: "))
-        print("Nhập tọa độ của 2 đầu mút của từng đoạn thẳng theo định dạng: x1 y1 x2 y2: ")
+        n = int(input("Nhập số lượng đoạn thẳng:"))
+        print("Nhập tọa độ của 2 đầu mút của từng đoạn thẳng theo định dạng: x1 y1 x2 y2:")
         danh_sach = []
         for _ in range(n):
             data = list(map(int, input().split()))
             d = LineSegment(*data)
             danh_sach.append(d)
         danh_sach.sort(key=lambda x: x.length())
-        print("Danh sách đoạn thẳng theo chiều dài tăng dần: ")
+        print("Danh sách đoạn thẳng theo chiều dài tăng dần:")
         for doan in danh_sach:
             doan.print()
 
