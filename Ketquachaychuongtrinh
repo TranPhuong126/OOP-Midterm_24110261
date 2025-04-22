@@ -1,0 +1,38 @@
+#Bai1:
+Tọa độ điểm A:
+(3, 4)
+Nhập tọa độ điểm B (x y): -50 100
+Tọa độ điểm B:
+(-50, 100)
+Tọa độ điểm C (đối xứng với điểm B qua gốc tọa độ):
+(50, -100)
+Khoảng cách từ điểm B đến gốc tọa độ:
+111.80339887498948
+Khoảng cách từ điểm A đến điểm B:
+109.65856099730654
+
+#Bai2:
+Đoạn thẳng AB sau khi tịnh tiến:
+[(37, 56); (55, 86)]
+Nhập đoạn thẳng (x1 y1 x2 y2): 7 3 -5 10
+|CD| = 13.89
+Nhập số lượng đoạn thẳng: 3
+Nhập tọa độ của 2 đầu mút của từng đoạn thẳng theo định dạng: x1 y1 x2 y2
+1 2 3 4
+0 0 0 1
+-1 -1 2 2
+Danh sách đoạn thẳng theo chiều dài tăng dần:
+[(0, 0); (0, 1)]
+[(1, 2); (3, 4)]
+[(-1, -1); (2, 2)]
+
+#Bai31:
+color: xanh
+
+#Bai32:
+(5, 10): trắng
+-3 223 xanh da trời
+(7, 231): xanh da trời
+(6, 3): đen
+(6, 3): vàng
+(6, 3): đen
